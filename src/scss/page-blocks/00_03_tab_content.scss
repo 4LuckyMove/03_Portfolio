@@ -1,0 +1,160 @@
+.tab-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    .crisper {
+        .section-title {
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            .title {
+                margin-bottom: 10px;
+                color: $color-dark;
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+            .subtitle {
+                color: $color-dark;
+                font-size: 14px;
+            }
+        }
+        .section-description {
+            text-align: center;
+            .tabs-container {
+                margin-bottom: 20px;
+                .tabs {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    & > *:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+                    .tab {
+                        cursor: pointer;
+                        width: 100%;
+                        background-color: #92A0AD;
+                        border: 1px solid #92A0AD;
+                        color: $color-white;
+                        text-transform: uppercase;
+                        border-radius: 4px;
+                        padding: 15px 30px;
+                        font-size: 14px;
+                        &.active {
+                            background-color: #2E80B6;
+                            border: 1px solid #2E80B6;
+                        }
+                    }
+                }
+            }
+            .tabs-content-container {
+                .tab-content {
+                    display: none;
+                    &.active{
+                        display: block;
+                    }
+                    .tab-content-title {
+                        margin-bottom: 10px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-position: center;
+                            object-fit: cover;
+                        }
+                    }
+                    .tab-content-body {
+                        .title {
+                            margin-bottom: 14px;
+                            font-size: 18px;
+                            color: $color-dark;
+                        }
+                        .description {
+                            color: $color-dark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* sm-размер (>=576px) */
+@media (min-width: 576px) {
+    /* CSS для ширины от 576px до 767px */
+    .tab-section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        .crisper {
+            .section-title {
+                margin-bottom: 30px;
+                .title {
+                    margin-bottom: 15px;
+                }
+                .subtitle {
+                    letter-spacing: 1px;
+                }
+            }
+            .section-description {
+                .tabs-container {
+                    margin-bottom: 30px;
+                    .tabs {
+                        flex-direction: row;
+                        & > *:not(:last-child) {
+                            margin-bottom: 0px;
+                            margin-right: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* md-размер (>=768px) */
+@media (min-width: 768px) {
+    /* CSS для ширины от 768px до 991px */
+    .tab-section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        .crisper {
+            .section-title {
+                margin-bottom: 45px;
+                .title {
+                    margin-bottom: 17px;
+                }
+            }
+            .section-description {
+                .tabs-container {
+                    margin-bottom: 40px;
+                    .tabs {
+                        .tab {
+                            font-size: 16px;
+                            padding: 1px 30px;
+                        }
+                    }
+                }
+                .tabs-content-container {
+                    .tab-content {
+                        .tab-content-title {
+                            margin-bottom: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* lg-размер (>=992px) */
+@media (min-width: 992px) {
+    /* CSS для ширины от 992px до 1199px */
+    .tab-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        padding-left: 0;
+        padding-right: 0;
+        .crisper {
+            .section-title {
+                margin-bottom: 60px;
+            }
+        }
+    }
+}

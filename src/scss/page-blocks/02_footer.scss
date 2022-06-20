@@ -1,0 +1,32 @@
+.footer {
+    padding-top: 48px;
+    padding-bottom: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    font-family: $ff-medium;
+    font-weight: $fw-other;
+    color: $color-grey;
+    .link-social {
+        color: $color-grey;
+        &:hover {
+            color: $color-black;
+        }
+    }
+}
+/* md-размер (>=768px) */
+@media (min-width: 768px) {
+    /* CSS для ширины от 768px до 991px */
+    .footer {
+        padding-left: 0px;
+        padding-right: 0px;
+        font-size: 14px;
+    }
+}
+/* lg-размер (>=992px) */
+@media (min-width: 992px) {
+    /* CSS для ширины от 992px до 1199px */
+    .footer {
+        padding-bottom: 123px;
+    }
+}

@@ -1,0 +1,93 @@
+// @import "fonts";
+@import url('http://fonts.cdnfonts.com/css/gilroy-bold');
+
+// Main Color
+$color-white: #FFF;
+$color-dark-white: #E5E5E5;
+$color-black:#000;
+$color-dark: #070707;
+$color-grey: #828282;
+$color-bg: #F6F6F6;
+$color-hover-link: #090909;
+
+// Main Font
+$fw-content: 700;
+$fw-other: 500;
+$fz-content: 18px;
+$lh-content: 1.4;
+$fz-title: 34px;
+$ff-bold: 'Gilroy-Bold', sans-serif;
+$ff-medium: 'Gilroy-Medium', sans-serif;
+
+
+
+// Reset
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: $ff-bold;
+	font-size: $fz-content;
+    line-height: $lh-content;
+	font-weight: $fw-content;
+	color: $color-black;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-size: 1rem;
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+a {
+    text-decoration: none;
+	color: $color-black;
+}
+
+ul,
+ol,
+li {
+    list-style-type: none;
+}
+
+.wrapper {
+	min-height: 100%;
+    margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.content {
+	flex: 1 1 auto;
+}
+
+.crisper {
+    max-width: 940px;
+	margin: 0 auto;
+}
+
+@import "page-blocks/**.scss";

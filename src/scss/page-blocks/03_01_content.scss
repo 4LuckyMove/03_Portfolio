@@ -1,0 +1,90 @@
+.acquaintance {
+    padding-top: 65px;
+    padding-bottom: 83px;
+    padding-left: 30px;
+    padding-right: 30px;
+    .crisper {
+        .section-title {
+            margin-bottom: 37px;
+            .fname {
+                color: $color-black;
+                font-size: 47px;
+                .name {
+                    line-height: 1;
+                }
+                .lname {
+                    line-height: 1.6;
+                }
+            }
+            .other-info {
+                color: $color-hover-link;
+                font-family: $ff-medium;
+                font-weight: $fw-other;
+            }
+            .language-site {
+				line-height: $lh-content;
+				color: $color-grey;
+				writing-mode: vertical-lr;
+                transform: rotate(-180deg);
+				display: none;
+                .link-lang {
+                    color: $color-grey;
+					text-transform: uppercase;
+					&.active {
+						color: $color-hover-link;
+					}
+					&:first-child {
+						margin-bottom: 10px;
+					}
+                }
+                .separator-lang {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .section-body {
+            height: 418px;
+            margin: 0 auto;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+    }
+}
+/* md-размер (>=768px) */
+@media (min-width: 768px) {
+    /* CSS для ширины от 768px до 991px */
+    .acquaintance {
+        padding-top: 40px;
+        padding-bottom: 104px;
+        padding-left: 10px;
+        padding-right: 10px;
+        .crisper {
+            .section-title {
+                margin-bottom: 30px;
+                width: 100%;
+                display: inline-flex;
+                justify-content: space-between;
+                align-items: center;
+                .language-site {
+                    font-size: 16px;
+                    display: flex;
+                }
+            }
+            .section-body {
+                height: 387px;
+            }
+        }
+    }
+}
+/* lg-размер (>=992px) */
+@media (min-width: 992px) {
+    /* CSS для ширины от 992px до 1199px */
+    .acquaintance {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

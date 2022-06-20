@@ -1,0 +1,50 @@
+.about-me {
+    padding-top: 81px;
+    padding-bottom: 76px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: $color-bg;
+    .crisper {
+        text-align: center;
+        color: $color-black;
+        .section-title {
+            margin-bottom: 35px;
+            font-size: $fz-title;
+        }
+        .section-body {
+            max-width: 316px;
+            margin: 0 auto;
+            font-family: $ff-medium;
+            font-weight: $fw-other;
+            & > *:not(:last-child) {
+                margin-bottom: 35px;
+            }
+        }
+    }
+}
+/* md-размер (>=768px) */
+@media (min-width: 768px) {
+    /* CSS для ширины от 768px до 991px */
+    .about-me {
+        padding-top: 120px;
+        padding-bottom: 107px;
+        padding-right: 10px;
+        padding-left: 10px;
+        .crisper {
+            .section-title {
+                margin-bottom: 25px;
+            }
+            .section-body {
+                max-width: 485px;
+            }
+        }
+    }
+}
+/* lg-размер (>=992px) */
+@media (min-width: 992px) {
+    /* CSS для ширины от 992px до 1199px */
+    .about-me {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

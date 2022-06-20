@@ -1,0 +1,108 @@
+.modals {
+    .crisper {
+        .modal {
+            opacity: 0;
+            visibility: hidden;
+            overflow: auto;
+            height: auto;
+            max-height: 100%;
+            width: 100%;
+            max-width: 500px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 30;
+            box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
+            padding: 20px 30px 30px 30px;
+            border-radius: 4px;
+            background-color: $color-white;
+            transition: 0.3s all;
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            .modal-title {
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .modal__cross {
+                    width: 20px;
+                    height: 20px;
+                    fill: $color-dark;
+                    cursor: pointer;
+                }
+                .modal__title {
+                    color: $color-black;
+                    font-size: $fz-title;
+                }
+            }
+            .sub-title {
+                margin-bottom: 20px;
+            }
+        }
+        .modal-2 {
+            .modal-body {
+                label {
+                    font-family: $ff-bold;
+                    color: $color-black;
+                }
+                input[type=text], select, textarea, input[type=email] {
+                    width: 100%;
+                    padding: 12px;
+                    margin: 5px 0 22px 0;
+                    display: inline-block;
+                    border: none;
+                    background: $color-dark-white;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                    resize: vertical;
+                    color: $color-dark;
+                    &:focus {
+                        background-color: $color-dark-white;
+                        outline: none;
+                    }
+                    &::placeholder {
+                        color: $color-dark;
+                        font-family: $ff-medium;
+                        font-weight: $fw-other;
+                        font-size: 16px;
+                    }
+                }
+                input[type=submit] {
+                    font-family: $ff-bold;
+                    width: 100%;
+                    margin: 0 auto;
+                    background-color: $color-black;
+                    border: 1px solid $color-black;
+                    color: $color-white;
+                    padding: 12px 97px;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    font-size: $fz-content;
+                    opacity: 1;
+                    &:hover {
+                        opacity: .9;
+                    }
+                }
+            }
+        }
+        .overlay {
+            opacity: 0;
+            visibility: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            z-index: 20;
+            transition: .3s all;
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}

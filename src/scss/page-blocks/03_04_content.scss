@@ -1,0 +1,69 @@
+.portfolio {
+    padding-top: 81px;
+    padding-bottom: 81px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: $color-bg;
+    .crisper {
+        text-align: center;
+        .section-title {
+            margin-bottom: 65px;
+            font-size: $fz-title;
+        }
+        .section-body {
+            .card {
+                margin-bottom: 78px;
+                .card-title {
+                    margin-bottom: 33px;
+                    .img-mobile-portfolio {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                .card-body {
+                    .link-card {
+                        font-family: $ff-medium;
+                        font-weight: $fw-other;
+                        text-decoration: underline;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* md-размер (>=768px) */
+@media (min-width: 768px) {
+    /* CSS для ширины от 768px до 991px */
+    .portfolio {
+        padding-top: 113px;
+        padding-bottom: 96px;
+        padding-left: 10px;
+        padding-right: 10px;
+        .crisper {
+            .section-title {
+                margin-bottom: 47px;
+            }
+            .section-body {
+                .card {
+                    margin-bottom: 99px;
+                    .card-title {
+                        margin-bottom: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
+/* lg-размер (>=992px) */
+@media (min-width: 992px) {
+    /* CSS для ширины от 992px до 1199px */
+    .portfolio {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

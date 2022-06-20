@@ -1,0 +1,111 @@
+.skills {
+    padding-top: 83px;
+    padding-bottom: 98px;
+    padding-left: 30px;
+    padding-right: 30px;
+    .crisper {
+        text-align: center;
+        .section-title {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 71px;
+            max-width: 228px;
+            font-size: $fz-title;
+            .title {
+                margin-bottom: 50px;
+            }
+            .sub-title {
+                font-family: $ff-medium;
+                font-weight: $fw-other;
+                font-size: $fz-content;
+            }
+        }
+        .section-body {
+            .card {
+                &:not(:last-child) {
+                    margin-bottom: 81px;
+                }
+                &:nth-child(2) .card-body .rating .star:nth-child(4) {
+                    opacity: .1;
+                }
+                .card-title {
+                    max-width: 89px;
+                    max-height: 89px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 24px;
+                    .img-card {
+                        object-fit: contain;
+                        object-position: center;
+                    }
+                }
+                .card-body {
+                    .card-body-title {
+                        margin-bottom: 40px;
+                        height: 27px;
+                        font-size: 14px;
+                        color: $color-grey;
+                    }
+                    .rating {
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 166px;
+                        display: flex;
+                        justify-content: space-between;
+                        .star {
+                            &:last-child {
+                                opacity: .1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* md-размер (>=768px) */
+@media (min-width: 768px) {
+    /* CSS для ширины от 768px до 991px */
+    .skills {
+        padding-top: 91px;
+        padding-bottom: 110px;
+        padding-left: 10px;
+        padding-right: 10px;
+        .crisper {
+            .section-title {
+                margin-bottom: 83px;
+                .title {
+                    margin-bottom: 69px;
+                }
+            }
+            .section-body {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 90px;
+                .card {
+                    &:not(:last-child) {
+                        margin-bottom: 0;
+                    }
+                    .card-body {
+                        .card-body-title {
+                            margin-bottom: 41px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* lg-размер (>=992px) */
+@media (min-width: 992px) {
+    /* CSS для ширины от 992px до 1199px */
+    .skills {
+        padding-left: 0;
+        padding-right: 0;
+        .crisper {
+            .section-body {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+}
