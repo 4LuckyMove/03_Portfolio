@@ -65,3 +65,11 @@ if(menuLinks.length > 0) {
 		});
 	}
 }
+
+const mobileMenuLinks = document.querySelectorAll('.nav-panel-mobile .nav-panel-link[data-goto]')
+
+if(mobileMenuLinks.length > 0) {
+	mobileMenuLinks.forEach((menuLink) => {
+        menuLink.addEventListener('click', onMenuLinkClick);
+    });
+}
