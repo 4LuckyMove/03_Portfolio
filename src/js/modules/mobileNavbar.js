@@ -10,46 +10,85 @@ if(menuBtn) {
 	});
 }
 
-// Прокрутка при клике
-function onMenuLinkClick(e) {
-	const menuLink = e.target;
-	offMenuLinkClick();
-	menuLink.classList.add('active-link');
-	if(menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-		const gotoBlock = document.querySelector(menuLink.dataset.goto);
-		const gotoBlockValue = gotoBlock.getBoundingClientRect().top + window.pageYOffset - document.querySelector('header').offsetHeight;
+// Определение активного языка на сайте
+const lang = document.querySelectorAll('.link-lang');
+const langSiteAll = document.querySelectorAll('.language-site');
+const langMenu = document.querySelector('.language-site[data-lang-site="1"]');
+const langSite = document.querySelector('.language-site[data-lang-site="2"]');
 
-		window.scrollTo({
-			top: gotoBlockValue,
-			behavior: "smooth"
-		});
+langSiteAll.forEach((item) =>{
+	item.addEventListener('click', () => {
+		idLangs = item.getAttribute('data-lang-site');
+		ActiveLangs = document.querySelector('.language-site[data-lang-site="'+ idLangs +'"]');
+		if(ActiveLangs === langMenu) {
+			if(lang) {
+				lang.forEach((item) => {
+					item.addEventListener('click', () => {
+						let langId = item.getAttribute('data-lang');
+						let langActive = document.querySelector('.link-lang[data-lang="'+ langId +'"]');
+						let langUkr = document.querySelector('.link-lang[data-lang="ukr"]');
+						let langEng = document.querySelector('.link-lang[data-lang="eng"]');
 
-		e.preventDefault();
-	}
-}
+						if(langActive ===  langUkr) {
+							langActive.classList.add('active');
+							langEng.classList.remove('active');
+						}
 
-function offMenuLinkClick() {
-	let menuLinkActive = document.querySelector('.nav-panel-link.active-link');
-	if(menuLinkActive) {
-		menuLinkActive.classList.remove('active-link');
-	}
-}
-
-function scrollActiveLink() {
-	let mainSection = document.querySelectorAll('.content-section');
-	mainSection.forEach((v, i) => {
-		let rect = v.getBoundingClientRect().top;
-		if (rect < window.innerHeight - window.innerHeight / 2) {
-			menuLinks.forEach(v => v.classList.remove('active-link'));
-			menuLinks[i].classList.add('active-link');
+						if(langActive ===  langEng) {
+							langUkr.classList.remove('active');
+							langActive.classList.add('active');
+						}
+					});
+				});
+			}
+		} else if(ActiveLangs === langSite) {
+			if(lang) {
+				lang.forEach((item) => {
+					item.addEventListener('click', () => {
+						let langId = item.getAttribute('data-lang');
+						let langActive = document.querySelector('.link-lang[data-lang="'+ langId +'"]');
+						let langUkr = document.querySelector('.link-lang[data-lang="ukr"]');
+						let langEng = document.querySelector('.link-lang[data-lang="eng"]');
+						if(langActive ===  langUkr) {
+							langActive.classList.add('active');
+							langEng.classList.remove('active');
+						}
+						if(langActive ===  langEng) {
+							langUkr.classList.remove('active');
+							langActive.classList.add('active');
+						}
+					});
+				});
+			}
 		}
+	});
+});
+
+if(lang) {
+	lang.forEach((item) => {
+		item.addEventListener('click', () => {
+			let langId = item.getAttribute('data-lang');
+			let langActive = document.querySelector('.link-lang[data-lang="'+ langId +'"]');
+			let langUkr = document.querySelector('.link-lang[data-lang="ukr"]');
+			let langEng = document.querySelector('.link-lang[data-lang="eng"]');
+
+			if(langActive ===  langUkr) {
+				langActive.classList.add('active');
+				langEng.classList.remove('active');
+			}
+
+			if(langActive ===  langEng) {
+				langUkr.classList.remove('active');
+				langActive.classList.add('active');
+			}
+		});
 	});
 }
 
-// Скролл при десктопе
-const menuLinksDesktop = document.querySelectorAll('.nav-panel-desktop .nav-panel-link[data-goto]');
+// Прокрутка при клике
+const menuLinks = document.querySelectorAll('.nav-panel-link[data-goto]');
 
-if(menuLinksDesktop.length > 0) {
+if(menuLinks.length > 0) {
 	window.onscroll = (() => {
 		scrollActiveLink();
 	})
@@ -57,27 +96,11 @@ if(menuLinksDesktop.length > 0) {
 		scrollActiveLink();
 	})
 
-    menuLinksDesktop.forEach((menuLink) => {
+    menuLinks.forEach((menuLink) => {
         menuLink.addEventListener('click', onMenuLinkClick);
     });
-}
 
-// Скролл при мобильном устройстве
-const menuLinksMobile = document.querySelectorAll('.nav-panel-mobile .nav-panel-link[data-goto]');
-
-if(menuLinksMobile.length > 0) {
-	window.onscroll = (() => {
-		scrollActiveLink();
-	})
-	window.onload = (() => {
-		scrollActiveLink();
-	})
-
-    menuLinksMobile.forEach((menuLink) => {
-        menuLink.addEventListener('click', onMenuLinkClickMobile);
-    });
-
-    function onMenuLinkClickMobile(e) {
+    function onMenuLinkClick(e) {
         const menuLink = e.target;
 		offMenuLinkClick();
 		menuLink.classList.add('active-link');
@@ -98,4 +121,22 @@ if(menuLinksMobile.length > 0) {
             e.preventDefault();
         }
     }
+
+	function offMenuLinkClick() {
+		let menuLinkActive = document.querySelector('.nav-panel-link.active-link');
+		if(menuLinkActive) {
+			menuLinkActive.classList.remove('active-link');
+		}
+	}
+
+	function scrollActiveLink() {
+		let mainSection = document.querySelectorAll('.content-section');
+		mainSection.forEach((v, i) => {
+			let rect = v.getBoundingClientRect().top;
+			if (rect < window.innerHeight - window.innerHeight / 2) {
+				menuLinks.forEach(v => v.classList.remove('active-link'));
+				menuLinks[i].classList.add('active-link');
+			}
+		});
+	}
 }

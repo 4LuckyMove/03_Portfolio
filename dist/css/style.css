@@ -1,9 +1,12 @@
 @charset "UTF-8";
+
 @import url("http://fonts.cdnfonts.com/css/gilroy-bold");
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -24,6 +27,7 @@ body {
 body {
   font-size: 1rem;
 }
+
 body.lock {
   overflow: hidden;
 }
@@ -55,12 +59,19 @@ li {
 .wrapper {
   min-height: 100%;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .content {
-  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .crisper {
@@ -74,36 +85,53 @@ li {
   padding-left: 10px;
   padding-right: 10px;
 }
+
 .tab-section .crisper .section-title {
   margin-bottom: 20px;
   text-align: center;
   text-transform: uppercase;
 }
+
 .tab-section .crisper .section-title .title {
   margin-bottom: 10px;
   color: #070707;
   font-size: 18px;
   letter-spacing: 2px;
 }
+
 .tab-section .crisper .section-title .subtitle {
   color: #070707;
   font-size: 14px;
 }
+
 .tab-section .crisper .section-description {
   text-align: center;
 }
+
 .tab-section .crisper .section-description .tabs-container {
   margin-bottom: 20px;
 }
+
 .tab-section .crisper .section-description .tabs-container .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .tab-section .crisper .section-description .tabs-container .tabs > *:not(:last-child) {
   margin-bottom: 10px;
 }
+
 .tab-section .crisper .section-description .tabs-container .tabs .tab {
   cursor: pointer;
   width: 100%;
@@ -115,98 +143,49 @@ li {
   padding: 15px 30px;
   font-size: 14px;
 }
+
 .tab-section .crisper .section-description .tabs-container .tabs .tab.active {
   background-color: #2E80B6;
   border: 1px solid #2E80B6;
 }
+
 .tab-section .crisper .section-description .tabs-content-container .tab-content {
   display: none;
 }
+
 .tab-section .crisper .section-description .tabs-content-container .tab-content.active {
   display: block;
 }
+
 .tab-section .crisper .section-description .tabs-content-container .tab-content .tab-content-title {
   margin-bottom: 10px;
 }
+
 .tab-section .crisper .section-description .tabs-content-container .tab-content .tab-content-title img {
   width: 100%;
   height: 100%;
-  object-position: center;
-  object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
+
 .tab-section .crisper .section-description .tabs-content-container .tab-content .tab-content-body .title {
   margin-bottom: 14px;
   font-size: 18px;
   color: #070707;
 }
+
 .tab-section .crisper .section-description .tabs-content-container .tab-content .tab-content-body .description {
   color: #070707;
 }
 
 /* sm-размер (>=576px) */
-@media (min-width: 576px) {
-  /* CSS для ширины от 576px до 767px */
-  .tab-section {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-  .tab-section .crisper .section-title {
-    margin-bottom: 30px;
-  }
-  .tab-section .crisper .section-title .title {
-    margin-bottom: 15px;
-  }
-  .tab-section .crisper .section-title .subtitle {
-    letter-spacing: 1px;
-  }
-  .tab-section .crisper .section-description .tabs-container {
-    margin-bottom: 30px;
-  }
-  .tab-section .crisper .section-description .tabs-container .tabs {
-    flex-direction: row;
-  }
-  .tab-section .crisper .section-description .tabs-container .tabs > *:not(:last-child) {
-    margin-bottom: 0px;
-    margin-right: 16px;
-  }
-}
+
 /* md-размер (>=768px) */
-@media (min-width: 768px) {
-  /* CSS для ширины от 768px до 991px */
-  .tab-section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .tab-section .crisper .section-title {
-    margin-bottom: 45px;
-  }
-  .tab-section .crisper .section-title .title {
-    margin-bottom: 17px;
-  }
-  .tab-section .crisper .section-description .tabs-container {
-    margin-bottom: 40px;
-  }
-  .tab-section .crisper .section-description .tabs-container .tabs .tab {
-    font-size: 16px;
-    padding: 1px 30px;
-  }
-  .tab-section .crisper .section-description .tabs-content-container .tab-content .tab-content-title {
-    margin-bottom: 16px;
-  }
-}
+
 /* lg-размер (>=992px) */
-@media (min-width: 992px) {
-  /* CSS для ширины от 992px до 1199px */
-  .tab-section {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .tab-section .crisper .section-title {
-    margin-bottom: 60px;
-  }
-}
+
 .header {
   position: sticky;
   top: 0;
@@ -214,29 +193,38 @@ li {
   z-index: 5;
   background-color: #F6F6F6;
 }
+
 .header .body-header .crisper .body-nav-desktop {
   padding-right: 28px;
   padding-left: 10px;
   position: relative;
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-desktop {
   display: none;
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-desktop .nav-panel-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-desktop .nav-panel-items .nav-panel-item .nav-panel-link {
   display: block;
   font-size: 18px;
   line-height: 1.4;
   color: #828282;
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-desktop .nav-panel-items .nav-panel-item .nav-panel-link:hover {
   text-decoration: underline;
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-desktop .nav-panel-items .nav-panel-item .nav-panel-link.active-link {
   color: #090909;
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-mobile-btn {
   display: inline-block;
   cursor: pointer;
@@ -247,6 +235,7 @@ li {
   right: 30px;
   z-index: 5;
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-mobile-btn span {
   width: 33px;
   height: 4px;
@@ -254,34 +243,50 @@ li {
   z-index: 5;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background-color: #000;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-mobile-btn span:nth-of-type(2) {
   top: calc(50% - 8px);
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-mobile-btn span:nth-of-type(3) {
   top: calc(50% + 8px);
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-mobile-btn.active {
   top: 66px;
   right: 28px;
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-mobile-btn.active span {
   background-color: #828282;
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-mobile-btn.active span:nth-of-type(1) {
   display: none;
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-mobile-btn.active span:nth-of-type(2) {
   top: 50%;
-  transform: translate(-50%, 0%) rotate(45deg);
+  -webkit-transform: translate(-50%, 0%) rotate(45deg);
+      -ms-transform: translate(-50%, 0%) rotate(45deg);
+          transform: translate(-50%, 0%) rotate(45deg);
 }
+
 .header .body-header .crisper .body-nav-desktop .nav-panel-mobile-btn.active span:nth-of-type(3) {
   top: 50%;
-  transform: translate(-50%, 0%) rotate(-45deg);
+  -webkit-transform: translate(-50%, 0%) rotate(-45deg);
+      -ms-transform: translate(-50%, 0%) rotate(-45deg);
+          transform: translate(-50%, 0%) rotate(-45deg);
 }
+
 .header .body-header .crisper .nav-panel-mobile {
   padding-top: 66px;
   padding-bottom: 57px;
@@ -295,92 +300,83 @@ li {
   right: -100%;
   z-index: 4;
   background-color: #FFF;
+  -webkit-transition: right 0.5s ease 0s;
+  -o-transition: right 0.5s ease 0s;
   transition: right 0.5s ease 0s;
 }
+
 .header .body-header .crisper .nav-panel-mobile.active {
   right: 0;
   display: block;
+  -webkit-transition: right 0.5s ease 0s;
+  -o-transition: right 0.5s ease 0s;
   transition: right 0.5s ease 0s;
 }
+
 .header .body-header .crisper .nav-panel-mobile .nav-panel-items {
   margin-bottom: 150px;
 }
+
 .header .body-header .crisper .nav-panel-mobile .nav-panel-items .nav-panel-item {
   padding-bottom: 68px;
 }
+
 .header .body-header .crisper .nav-panel-mobile .nav-panel-items .nav-panel-item:hover .language-site .link-lang {
   color: #090909;
 }
+
 .header .body-header .crisper .nav-panel-mobile .nav-panel-items .nav-panel-item .nav-panel-link {
   color: #828282;
   display: inline-block;
   font-size: 34px;
   line-height: 1.4;
 }
+
 .header .body-header .crisper .nav-panel-mobile .nav-panel-items .nav-panel-item .nav-panel-link:hover {
   text-decoration: underline;
 }
+
 .header .body-header .crisper .nav-panel-mobile .nav-panel-items .nav-panel-item .nav-panel-link.active-link {
   color: #090909;
 }
+
 .header .body-header .crisper .nav-panel-mobile .language-site {
   margin-left: auto;
   font-size: 34px;
   line-height: 1.4;
   color: #828282;
-  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
+
 .header .body-header .crisper .nav-panel-mobile .language-site .link-lang {
   color: #828282;
   text-transform: uppercase;
 }
+
 .header .body-header .crisper .nav-panel-mobile .language-site .link-lang.active {
   color: #090909;
 }
+
 .header .body-header .crisper .nav-panel-mobile .language-site .link-lang:first-child {
   margin-bottom: 10px;
 }
+
 .header .body-header .crisper .nav-panel-mobile .language-site .separator-lang {
   margin-bottom: 10px;
 }
 
 /* md-размер (>=768px) */
-@media (min-width: 768px) {
-  /* CSS для ширины от 768px до 991px */
-  .header {
-    background-color: #FFF;
-    border-bottom: 1px solid #828282;
-  }
-  .header .body-header .crisper .body-nav-desktop {
-    padding-top: 33px;
-    padding-bottom: 33px;
-    padding-right: 10px;
-    display: block;
-  }
-  .header .body-header .crisper .body-nav-desktop .nav-panel-desktop {
-    display: block;
-  }
-  .header .body-header .crisper .body-nav-desktop .nav-panel-desktop .nav-panel-items {
-    justify-content: space-between;
-    align-items: center;
-  }
-  .header .body-header .crisper .body-nav-desktop .nav-panel-mobile-btn {
-    display: none;
-  }
-  .header .body-header .crisper .nav-panel-mobile.active {
-    display: none;
-  }
-}
+
 /* lg-размер (>=992px) */
-@media (min-width: 992px) {
-  /* CSS для ширины от 992px до 1199px */
-  .header .body-header .crisper .body-nav-desktop {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
+
 .footer {
   padding-top: 48px;
   padding-bottom: 90px;
@@ -391,116 +387,96 @@ li {
   font-weight: 500;
   color: #828282;
 }
+
 .footer .link-social {
   color: #828282;
 }
+
 .footer .link-social:hover {
   color: #000;
 }
 
 /* md-размер (>=768px) */
-@media (min-width: 768px) {
-  /* CSS для ширины от 768px до 991px */
-  .footer {
-    padding-left: 0px;
-    padding-right: 0px;
-    font-size: 14px;
-  }
-}
+
 /* lg-размер (>=992px) */
-@media (min-width: 992px) {
-  /* CSS для ширины от 992px до 1199px */
-  .footer {
-    padding-bottom: 123px;
-  }
-}
+
 .acquaintance {
   padding-top: 65px;
   padding-bottom: 83px;
   padding-left: 30px;
   padding-right: 30px;
 }
+
 .acquaintance .crisper .section-title {
   margin-bottom: 37px;
 }
+
 .acquaintance .crisper .section-title .fname {
   color: #000;
   font-size: 47px;
 }
+
 .acquaintance .crisper .section-title .fname .name {
   line-height: 1;
 }
+
 .acquaintance .crisper .section-title .fname .lname {
   line-height: 1.6;
 }
+
 .acquaintance .crisper .section-title .other-info {
   color: #090909;
   font-family: "Gilroy-Medium", sans-serif;
   font-weight: 500;
 }
+
 .acquaintance .crisper .section-title .language-site {
   line-height: 1.4;
   color: #828282;
-  writing-mode: vertical-lr;
-  transform: rotate(-180deg);
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
   display: none;
 }
+
 .acquaintance .crisper .section-title .language-site .link-lang {
   color: #828282;
   text-transform: uppercase;
 }
+
 .acquaintance .crisper .section-title .language-site .link-lang.active {
   color: #090909;
 }
+
 .acquaintance .crisper .section-title .language-site .link-lang:first-child {
   margin-bottom: 10px;
 }
+
 .acquaintance .crisper .section-title .language-site .separator-lang {
   margin-bottom: 10px;
 }
+
 .acquaintance .crisper .section-body {
   height: 418px;
   margin: 0 auto;
 }
+
 .acquaintance .crisper .section-body img {
   height: 100%;
   width: 100%;
-  object-fit: contain;
-  object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 
 /* md-размер (>=768px) */
-@media (min-width: 768px) {
-  /* CSS для ширины от 768px до 991px */
-  .acquaintance {
-    padding-top: 40px;
-    padding-bottom: 104px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .acquaintance .crisper .section-title {
-    margin-bottom: 30px;
-    width: 100%;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .acquaintance .crisper .section-title .language-site {
-    font-size: 16px;
-    display: flex;
-  }
-  .acquaintance .crisper .section-body {
-    height: 387px;
-  }
-}
+
 /* lg-размер (>=992px) */
-@media (min-width: 992px) {
-  /* CSS для ширины от 992px до 1199px */
-  .acquaintance {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
+
 .about-me {
   padding-top: 81px;
   padding-bottom: 76px;
@@ -508,57 +484,43 @@ li {
   padding-left: 30px;
   background-color: #F6F6F6;
 }
+
 .about-me .crisper {
   text-align: center;
   color: #000;
 }
+
 .about-me .crisper .section-title {
   margin-bottom: 35px;
   font-size: 34px;
 }
+
 .about-me .crisper .section-body {
   max-width: 316px;
   margin: 0 auto;
   font-family: "Gilroy-Medium", sans-serif;
   font-weight: 500;
 }
+
 .about-me .crisper .section-body > *:not(:last-child) {
   margin-bottom: 35px;
 }
 
 /* md-размер (>=768px) */
-@media (min-width: 768px) {
-  /* CSS для ширины от 768px до 991px */
-  .about-me {
-    padding-top: 120px;
-    padding-bottom: 107px;
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-  .about-me .crisper .section-title {
-    margin-bottom: 25px;
-  }
-  .about-me .crisper .section-body {
-    max-width: 485px;
-  }
-}
+
 /* lg-размер (>=992px) */
-@media (min-width: 992px) {
-  /* CSS для ширины от 992px до 1199px */
-  .about-me {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
+
 .skills {
   padding-top: 83px;
   padding-bottom: 98px;
   padding-left: 30px;
   padding-right: 30px;
 }
+
 .skills .crisper {
   text-align: center;
 }
+
 .skills .crisper .section-title {
   margin-left: auto;
   margin-right: auto;
@@ -566,20 +528,25 @@ li {
   max-width: 228px;
   font-size: 34px;
 }
+
 .skills .crisper .section-title .title {
   margin-bottom: 50px;
 }
+
 .skills .crisper .section-title .sub-title {
   font-family: "Gilroy-Medium", sans-serif;
   font-weight: 500;
   font-size: 18px;
 }
+
 .skills .crisper .section-body .card:not(:last-child) {
   margin-bottom: 81px;
 }
+
 .skills .crisper .section-body .card:nth-child(2) .card-body .rating .star:nth-child(4) {
   opacity: 0.1;
 }
+
 .skills .crisper .section-body .card .card-title {
   max-width: 89px;
   max-height: 89px;
@@ -587,65 +554,41 @@ li {
   margin-right: auto;
   margin-bottom: 24px;
 }
+
 .skills .crisper .section-body .card .card-title .img-card {
-  object-fit: contain;
-  object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
+
 .skills .crisper .section-body .card .card-body .card-body-title {
   margin-bottom: 40px;
   height: 27px;
   font-size: 14px;
   color: #828282;
 }
+
 .skills .crisper .section-body .card .card-body .rating {
   margin-left: auto;
   margin-right: auto;
   width: 166px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 .skills .crisper .section-body .card .card-body .rating .star:last-child {
   opacity: 0.1;
 }
 
 /* md-размер (>=768px) */
-@media (min-width: 768px) {
-  /* CSS для ширины от 768px до 991px */
-  .skills {
-    padding-top: 91px;
-    padding-bottom: 110px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .skills .crisper .section-title {
-    margin-bottom: 83px;
-  }
-  .skills .crisper .section-title .title {
-    margin-bottom: 69px;
-  }
-  .skills .crisper .section-body {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 90px;
-  }
-  .skills .crisper .section-body .card:not(:last-child) {
-    margin-bottom: 0;
-  }
-  .skills .crisper .section-body .card .card-body .card-body-title {
-    margin-bottom: 41px;
-  }
-}
+
 /* lg-размер (>=992px) */
-@media (min-width: 992px) {
-  /* CSS для ширины от 992px до 1199px */
-  .skills {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .skills .crisper .section-body {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+
 .portfolio {
   padding-top: 81px;
   padding-bottom: 81px;
@@ -653,81 +596,72 @@ li {
   padding-right: 30px;
   background-color: #F6F6F6;
 }
+
 .portfolio .crisper {
   text-align: center;
 }
+
 .portfolio .crisper .section-title {
   margin-bottom: 65px;
   font-size: 34px;
 }
+
 .portfolio .crisper .section-body .card {
   margin-bottom: 78px;
 }
+
 .portfolio .crisper .section-body .card .card-title {
   margin-bottom: 33px;
 }
+
 .portfolio .crisper .section-body .card .card-title .img-mobile-portfolio {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
+
 .portfolio .crisper .section-body .card .card-body .link-card {
   font-family: "Gilroy-Medium", sans-serif;
   font-weight: 500;
   text-decoration: underline;
 }
+
 .portfolio .crisper .section-body .card .card-body .link-card:hover {
   text-decoration: none;
 }
 
 /* md-размер (>=768px) */
-@media (min-width: 768px) {
-  /* CSS для ширины от 768px до 991px */
-  .portfolio {
-    padding-top: 113px;
-    padding-bottom: 96px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .portfolio .crisper .section-title {
-    margin-bottom: 47px;
-  }
-  .portfolio .crisper .section-body .card {
-    margin-bottom: 99px;
-  }
-  .portfolio .crisper .section-body .card .card-title {
-    margin-bottom: 45px;
-  }
-}
+
 /* lg-размер (>=992px) */
-@media (min-width: 992px) {
-  /* CSS для ширины от 992px до 1199px */
-  .portfolio {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
+
 .contacts {
   padding-top: 82px;
   padding-left: 30px;
   padding-right: 30px;
 }
+
 .contacts .crisper {
   text-align: center;
 }
+
 .contacts .crisper .section-title {
   margin-bottom: 27px;
   font-size: 34px;
 }
+
 .contacts .crisper .section-body .description {
   margin-bottom: 40px;
   font-family: "Gilroy-Medium", sans-serif;
   font-weight: 500;
 }
+
 .contacts .crisper .section-body .body-btn {
   margin-bottom: 48px;
 }
+
 .contacts .crisper .section-body .body-btn .btn-send-msg {
   display: inline-block;
   padding-top: 12px;
@@ -739,61 +673,33 @@ li {
   color: #FFF;
   border-radius: 50px;
 }
+
 .contacts .crisper .section-body .body-btn .btn-send-msg:hover {
   opacity: 0.9;
 }
+
 .contacts .crisper .section-body .social-icons {
   margin-left: auto;
   margin-right: auto;
   max-width: 315px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 .contacts .crisper .section-body .social-icons .icon .social-link:hover svg {
   opacity: 0.7;
 }
 
 /* sm-размер (>=576px) */
-@media (min-width: 576px) {
-  /* CSS для ширины от 576px до 767px */
-  .contacts .crisper .section-body .body-btn .btn-send-msg {
-    padding-left: 97px;
-    padding-right: 97px;
-  }
-}
+
 /* md-размер (>=768px) */
-@media (min-width: 768px) {
-  /* CSS для ширины от 768px до 991px */
-  .contacts {
-    padding-top: 114px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .contacts .crisper .section-title {
-    margin-bottom: 20px;
-  }
-  .contacts .crisper .section-body .description {
-    margin-bottom: 29px;
-  }
-  .contacts .crisper .section-body .body-btn {
-    margin-bottom: 91px;
-  }
-  .contacts .crisper .section-body .body-btn .btn-send-msg {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  .contacts .crisper .section-body .social-icons {
-    max-width: 342px;
-  }
-}
+
 /* lg-размер (>=992px) */
-@media (min-width: 992px) {
-  /* CSS для ширины от 992px до 1199px */
-  .contacts {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
+
 .modals .crisper .modal {
   opacity: 0;
   visibility: hidden;
@@ -805,42 +711,63 @@ li {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 30;
-  box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.2);
   padding: 20px 30px 30px 30px;
   border-radius: 4px;
   background-color: #FFF;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
   transition: 0.3s all;
 }
+
 .modals .crisper .modal.active {
   opacity: 1;
   visibility: visible;
 }
+
 .modals .crisper .modal .modal-title {
   margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .modals .crisper .modal .modal-title .modal__cross {
   width: 20px;
   height: 20px;
   fill: #070707;
   cursor: pointer;
 }
+
 .modals .crisper .modal .modal-title .modal__title {
   color: #000;
   font-size: 34px;
 }
+
 .modals .crisper .modal .sub-title {
   margin-bottom: 20px;
 }
+
 .modals .crisper .modal-2 .modal-body label {
   font-family: "Gilroy-Bold", sans-serif;
   color: #000;
 }
-.modals .crisper .modal-2 .modal-body input[type=text], .modals .crisper .modal-2 .modal-body select, .modals .crisper .modal-2 .modal-body textarea, .modals .crisper .modal-2 .modal-body input[type=email] {
+
+.modals .crisper .modal-2 .modal-body input[type=text],
+.modals .crisper .modal-2 .modal-body select,
+.modals .crisper .modal-2 .modal-body textarea,
+.modals .crisper .modal-2 .modal-body input[type=email] {
   width: 100%;
   padding: 12px;
   margin: 5px 0 22px 0;
@@ -848,20 +775,58 @@ li {
   border: none;
   background: #E5E5E5;
   border-radius: 10px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   resize: vertical;
   color: #070707;
 }
-.modals .crisper .modal-2 .modal-body input[type=text]:focus, .modals .crisper .modal-2 .modal-body select:focus, .modals .crisper .modal-2 .modal-body textarea:focus, .modals .crisper .modal-2 .modal-body input[type=email]:focus {
+
+.modals .crisper .modal-2 .modal-body input[type=text]:focus,
+.modals .crisper .modal-2 .modal-body select:focus,
+.modals .crisper .modal-2 .modal-body textarea:focus,
+.modals .crisper .modal-2 .modal-body input[type=email]:focus {
   background-color: #E5E5E5;
   outline: none;
 }
-.modals .crisper .modal-2 .modal-body input[type=text]::placeholder, .modals .crisper .modal-2 .modal-body select::placeholder, .modals .crisper .modal-2 .modal-body textarea::placeholder, .modals .crisper .modal-2 .modal-body input[type=email]::placeholder {
+
+.modals .crisper .modal-2 .modal-body input[type=text]::-webkit-input-placeholder, .modals .crisper .modal-2 .modal-body select::-webkit-input-placeholder, .modals .crisper .modal-2 .modal-body textarea::-webkit-input-placeholder, .modals .crisper .modal-2 .modal-body input[type=email]::-webkit-input-placeholder {
   color: #070707;
   font-family: "Gilroy-Medium", sans-serif;
   font-weight: 500;
   font-size: 16px;
 }
+
+.modals .crisper .modal-2 .modal-body input[type=text]::-moz-placeholder, .modals .crisper .modal-2 .modal-body select::-moz-placeholder, .modals .crisper .modal-2 .modal-body textarea::-moz-placeholder, .modals .crisper .modal-2 .modal-body input[type=email]::-moz-placeholder {
+  color: #070707;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.modals .crisper .modal-2 .modal-body input[type=text]:-ms-input-placeholder, .modals .crisper .modal-2 .modal-body select:-ms-input-placeholder, .modals .crisper .modal-2 .modal-body textarea:-ms-input-placeholder, .modals .crisper .modal-2 .modal-body input[type=email]:-ms-input-placeholder {
+  color: #070707;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.modals .crisper .modal-2 .modal-body input[type=text]::-ms-input-placeholder, .modals .crisper .modal-2 .modal-body select::-ms-input-placeholder, .modals .crisper .modal-2 .modal-body textarea::-ms-input-placeholder, .modals .crisper .modal-2 .modal-body input[type=email]::-ms-input-placeholder {
+  color: #070707;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.modals .crisper .modal-2 .modal-body input[type=text]::placeholder,
+.modals .crisper .modal-2 .modal-body select::placeholder,
+.modals .crisper .modal-2 .modal-body textarea::placeholder,
+.modals .crisper .modal-2 .modal-body input[type=email]::placeholder {
+  color: #070707;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
 .modals .crisper .modal-2 .modal-body input[type=submit] {
   font-family: "Gilroy-Bold", sans-serif;
   width: 100%;
@@ -875,9 +840,11 @@ li {
   font-size: 18px;
   opacity: 1;
 }
+
 .modals .crisper .modal-2 .modal-body input[type=submit]:hover {
   opacity: 0.9;
 }
+
 .modals .crisper .overlay {
   opacity: 0;
   visibility: hidden;
@@ -888,9 +855,331 @@ li {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 20;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
   transition: 0.3s all;
 }
+
 .modals .crisper .overlay.active {
   opacity: 1;
   visibility: visible;
+}
+
+@media (min-width: 576px) {
+  /* CSS для ширины от 576px до 767px */
+
+  .tab-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .tab-section .crisper .section-title {
+    margin-bottom: 30px;
+  }
+
+  .tab-section .crisper .section-title .title {
+    margin-bottom: 15px;
+  }
+
+  .tab-section .crisper .section-title .subtitle {
+    letter-spacing: 1px;
+  }
+
+  .tab-section .crisper .section-description .tabs-container {
+    margin-bottom: 30px;
+  }
+
+  .tab-section .crisper .section-description .tabs-container .tabs {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .tab-section .crisper .section-description .tabs-container .tabs > *:not(:last-child) {
+    margin-bottom: 0px;
+    margin-right: 16px;
+  }
+
+  /* CSS для ширины от 576px до 767px */
+
+  .contacts .crisper .section-body .body-btn .btn-send-msg {
+    padding-left: 97px;
+    padding-right: 97px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* CSS для ширины от 768px до 991px */
+
+  .tab-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .tab-section .crisper .section-title {
+    margin-bottom: 45px;
+  }
+
+  .tab-section .crisper .section-title .title {
+    margin-bottom: 17px;
+  }
+
+  .tab-section .crisper .section-description .tabs-container {
+    margin-bottom: 40px;
+  }
+
+  .tab-section .crisper .section-description .tabs-container .tabs .tab {
+    font-size: 16px;
+    padding: 1px 30px;
+  }
+
+  .tab-section .crisper .section-description .tabs-content-container .tab-content .tab-content-title {
+    margin-bottom: 16px;
+  }
+
+  /* CSS для ширины от 768px до 991px */
+
+  .header {
+    background-color: #FFF;
+    border-bottom: 1px solid #828282;
+  }
+
+  .header .body-header .crisper .body-nav-desktop {
+    padding-top: 33px;
+    padding-bottom: 33px;
+    padding-right: 10px;
+    display: block;
+  }
+
+  .header .body-header .crisper .body-nav-desktop .nav-panel-desktop {
+    display: block;
+  }
+
+  .header .body-header .crisper .body-nav-desktop .nav-panel-desktop .nav-panel-items {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .header .body-header .crisper .body-nav-desktop .nav-panel-mobile-btn {
+    display: none;
+  }
+
+  .header .body-header .crisper .nav-panel-mobile.active {
+    display: none;
+  }
+
+  /* CSS для ширины от 768px до 991px */
+
+  .footer {
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 14px;
+  }
+
+  /* CSS для ширины от 768px до 991px */
+
+  .acquaintance {
+    padding-top: 40px;
+    padding-bottom: 104px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .acquaintance .crisper .section-title {
+    margin-bottom: 30px;
+    width: 100%;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .acquaintance .crisper .section-title .language-site {
+    font-size: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .acquaintance .crisper .section-body {
+    height: 387px;
+  }
+
+  /* CSS для ширины от 768px до 991px */
+
+  .about-me {
+    padding-top: 120px;
+    padding-bottom: 107px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .about-me .crisper .section-title {
+    margin-bottom: 25px;
+  }
+
+  .about-me .crisper .section-body {
+    max-width: 485px;
+  }
+
+  /* CSS для ширины от 768px до 991px */
+
+  .skills {
+    padding-top: 91px;
+    padding-bottom: 110px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .skills .crisper .section-title {
+    margin-bottom: 83px;
+  }
+
+  .skills .crisper .section-title .title {
+    margin-bottom: 69px;
+  }
+
+  .skills .crisper .section-body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    gap: 90px;
+  }
+
+  .skills .crisper .section-body .card:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .skills .crisper .section-body .card .card-body .card-body-title {
+    margin-bottom: 41px;
+  }
+
+  /* CSS для ширины от 768px до 991px */
+
+  .portfolio {
+    padding-top: 113px;
+    padding-bottom: 96px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .portfolio .crisper .section-title {
+    margin-bottom: 47px;
+  }
+
+  .portfolio .crisper .section-body .card {
+    margin-bottom: 99px;
+  }
+
+  .portfolio .crisper .section-body .card .card-title {
+    margin-bottom: 45px;
+  }
+
+  /* CSS для ширины от 768px до 991px */
+
+  .contacts {
+    padding-top: 114px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .contacts .crisper .section-title {
+    margin-bottom: 20px;
+  }
+
+  .contacts .crisper .section-body .description {
+    margin-bottom: 29px;
+  }
+
+  .contacts .crisper .section-body .body-btn {
+    margin-bottom: 91px;
+  }
+
+  .contacts .crisper .section-body .body-btn .btn-send-msg {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .contacts .crisper .section-body .social-icons {
+    max-width: 342px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* CSS для ширины от 992px до 1199px */
+
+  .tab-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tab-section .crisper .section-title {
+    margin-bottom: 60px;
+  }
+
+  /* CSS для ширины от 992px до 1199px */
+
+  .header .body-header .crisper .body-nav-desktop {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* CSS для ширины от 992px до 1199px */
+
+  .footer {
+    padding-bottom: 123px;
+  }
+
+  /* CSS для ширины от 992px до 1199px */
+
+  .acquaintance {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* CSS для ширины от 992px до 1199px */
+
+  .about-me {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* CSS для ширины от 992px до 1199px */
+
+  .skills {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .skills .crisper .section-body {
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* CSS для ширины от 992px до 1199px */
+
+  .portfolio {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* CSS для ширины от 992px до 1199px */
+
+  .contacts {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
